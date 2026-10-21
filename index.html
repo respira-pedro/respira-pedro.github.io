@@ -3,48 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Respira Pedro - Encontre Calma em 2 Minutos</title>
+<title>Respira Pedro - Um lugar de acolhimento</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0a0a0f;color:white;text-align:center}
-.hero{padding:80px 20px;background:radial-gradient(circle at 50% 0%,#2a2a6a,#0a0a0f)}
-h1{font-size:42px;line-height:1.1;margin:0}
-h1 span{color:#7c7cff}
-p.sub{font-size:18px;color:#aaa;max-width:500px;margin:20px auto}
-.btn{background:white;color:black;padding:18px 36px;border-radius:100px;font-weight:700;font-size:18px;border:none;margin-top:20px}
-.card{background:#15151e;border:1px solid #222;padding:24px;border-radius:20px;margin:20px;max-width:400px;margin-left:auto;margin-right:auto}
-.breathe{width:120px;height:120px;border-radius:50%;background:#7c7cff;margin:30px auto;animation:breathe 4s infinite}
-@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#eef6ff;color:#1a2a44}
+#entrada{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0a7cff,#6ec1ff);display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:9999;transition:1s;text-align:center;color:white;padding:20px}
+#entrada h1{font-size:52px}
+#entrada p{font-size:20px;margin-top:15px;min-height:60px;max-width:600px}
+#entrada button{margin-top:30px;padding:15px 40px;border:none;border-radius:30px;background:white;color:#0a7cff;font-weight:700;font-size:18px;cursor:pointer}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
+header{background:white;padding:15px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.05);position:sticky;top:0;z-index:10}
+nav a{margin:0 10px;color:#0a7cff;text-decoration:none;font-weight:600;cursor:pointer}
+.container{max-width:1000px;margin:20px auto;padding:10px}
+.card{background:white;border-radius:20px;padding:30px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.06)}
+.card h2{color:#0a7cff;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.jogo{padding:20px;border:2px solid #e6f0ff;border-radius:15px;text-align:center;cursor:pointer;background:#fbfeff}
+.jogo:hover{border-color:#0a7cff;transform:translateY(-3px)}
+.bolo{border-left:5px solid #ff9f0a;padding-left:15px;margin-bottom:20px}
+.bolo h4{color:#ff7a00}
+#chatBox{height:280px;overflow-y:auto;border:1px solid #dde8f7;border-radius:12px;padding:15px;background:#f8fbff;margin-bottom:10px}
+.msg{margin-bottom:10px;padding:8px 12px;background:white;border-radius:12px;max-width:80%}
+.msg span{font-size:12px;color:#888;display:block}
+.inputChat{display:flex;gap:10px}
+.inputChat input{flex:1;padding:12px;border-radius:25px;border:1px solid #cddaf0;outline:none}
+.inputChat button{padding:12px 20px;border-radius:25px;border:none;background:#0a7cff;color:white;font-weight:700;cursor:pointer}
+.respireCircle{width:140px;height:140px;background:linear-gradient(135deg,#0a7cff,#6ec1ff);border-radius:50%;margin:20px auto;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;animation:pulse 4s infinite;cursor:pointer}
 </style>
 </head>
 <body>
-<div class="hero">
-<h1>Quando a ansiedade apertar,<br><span>Respira, Pedro.</span></h1>
-<p class="sub">Uma técnica guiada de 2 minutos para trazer sua mente de volta pro agora. Sem cadastro. Sem app.</p>
-<button class="btn" onclick="document.getElementById('ex').scrollIntoView({behavior:'smooth'})">Começar agora - 2 min</button>
+<div id="entrada">
+<h1>Respira, Pedro.</h1>
+<p id="fraseEntrada"></p>
+<button onclick="document.getElementById('entrada').style.transform='translateY(-100%)'">Entrar no site 💙</button>
 </div>
-
-<div class="card">
-<h3>Como funciona?</h3>
-<p style="color:#aaa">1. Inspire por 4s<br>2. Segure por 4s<br>3. Expire por 4s<br>Repita com a bola.</p>
+<header>
+<strong>RESPIRE PEDRO</strong>
+<nav style="margin-top:8px">
+<a onclick="document.getElementById('diversao').scrollIntoView({behavior:'smooth'})">Diversão</a>
+<a onclick="document.getElementById('esportes').scrollIntoView({behavior:'smooth'})">Esportes</a>
+<a onclick="document.getElementById('bolos').scrollIntoView({behavior:'smooth'})">Bolos da Allana</a>
+<a onclick="document.getElementById('chat').scrollIntoView({behavior:'smooth'})">Chat do Bem</a>
+</nav>
+</header>
+<div class="container">
+<div class="card" style="text-align:center">
+<h2>Bem-vindo, você está em um lugar seguro</h2>
+<p>Aqui a gente lembra de uma coisa simples: <strong>respirar fundo muda tudo.</strong><br>Inspira por 4s, segura por 4s, solta por 4s.</p>
+<div class="respireCircle" id="circulo" onclick="mudarTexto()">INSPIRE</div>
+<p style="color:#666;font-size:14px">Criado por Pedro Lucas Sales de Araújo - Ubajara/CE<br>Pais: Milene de Oliveira Sales e José Gleuciano Rodrigues de Araújo</p>
 </div>
-
-<div id="ex" style="padding:60px 20px">
-<h2>Vamos respirar juntos</h2>
-<div class="breathe"></div>
-<p id="txt" style="font-size:24px;font-weight:700">Inspire...</p>
-<p style="color:#777">Siga a bola expandindo e contraindo</p>
+<div class="card" id="diversao">
+<h2>🎮 Pra se divertir e se distrair</h2>
+<div class="grid">
+<div class="jogo" onclick="alert('Jogo da Memória: Tente lembrar de 3 coisas boas do seu dia hoje!')">🧠<br><strong>Jogo da Memória</strong></div>
+<div class="jogo" onclick="alert(['Bebe água e respira fundo','Liga pra alguém que você ama hoje','Faz 10 min de caminhada sem celular'][Math.floor(Math.random()*3)])">💬<br><strong>Conselho do Dia</strong></div>
+<div class="jogo" onclick="mudarTexto()">🌬️<br><strong>Respiração</strong><br><small id="contadorResp">0 hoje</small></div>
+<div class="jogo" onclick="alert('Por que o livro de matemática está triste? Porque tem muitos problemas! 😂')">😂<br><strong>Piada Boa</strong></div>
 </div>
-
-<div style="padding:40px;color:#555">
-<p>Feito com carinho para ajudar nos momentos difíceis.<br><br>
-© respira-pedro.github.io</p>
 </div>
-
+<div class="card" id="esportes">
+<h2>⚽ Esportes, Jogos e Hobbies</h2>
+<div class="grid">
+<div class="jogo">🏃‍♂️ <strong>Caminhada</strong><br><small>20 min na praça de Ubajara já limpa a mente</small></div>
+<div class="jogo">⚽ <strong>Futebol com amigos</strong><br><small>Marca um baba no fim de tarde</small></div>
+<div class="jogo">🎮 <strong>Games</strong><br><small>1h pra relaxar e se divertir</small></div>
+<div class="jogo">📚 <strong>Leitura</strong><br><small>10 páginas por dia te deixam mais forte</small></div>
+</div>
+</div>
+<div class="card" id="bolos">
+<h2>🍰 O criador desse site adora o bolo que a Allana faz</h2>
+<p style="margin-bottom:15px">A Allana faz os melhores bolos! Separei 3 receitas bem legais, fofinhas e fáceis, inspiradas no bolo dela.</p>
+<div class="bolo"><h4>1. Bolo de Chocolate Fofinho da Allana</h4><p>3 ovos, 2 xícaras de farinha, 1 xícara de açúcar, 1 xícara de chocolate em pó, 1 xícara de leite morno, 1/2 xícara de óleo, 1 colher de fermento. Mistura os líquidos, depois os secos e por último o fermento. Forno 180°C por 35 min.</p></div>
+<div class="bolo"><h4>2. Bolo de Cenoura com Calda</h4><p>3 cenouras médias, 3 ovos, 1 xícara de óleo, 2 xícaras de açúcar, 2 e 1/2 de farinha, fermento. Bate cenoura, ovos e óleo no liquidificador.</p></div>
+<div class="bolo"><h4>3. Bolo de Milho Cremoso</h4><p>1 lata de milho, 1 lata de leite, 1 xícara de flocão, 3 ovos, 1/2 xícara de óleo, 1 xícara de açúcar, fermento. Bate tudo e assa 40 min.</p></div>
+</div>
+<div class="card" id="chat">
+<h2>💬 Chat do Bem</h2>
+<div id="chatBox"></div>
+<div class="inputChat">
+<input id="inputMsg" placeholder="Escreva algo bom pra você..." onkeydown="if(event.key==='Enter')enviarMsg()">
+<button onclick="enviarMsg()">Enviar</button>
+</div>
+</div>
+</div>
 <script>
-const t=document.getElementById('txt');
-let s=0;
-const f=["Inspire...","Segure...","Expire...","Segure..."];
-setInterval(()=>{s=(s+1)%4;t.textContent=f[s]},4000);
+const frases=["Respira fundo, vai ficar tudo bem 💙","Você é mais forte do que imagina","Um dia de cada vez, Pedro","Hoje pode ser difícil, mas amanhã é um novo dia","Você não está sozinho nessa"];
+let fi=0;function trocaFrase(){document.getElementById('fraseEntrada').innerText=frases[fi];fi=(fi+1)%frases.length}
+trocaFrase();setInterval(trocaFrase,3000);
+let estado=0;let cont=0;
+function mudarTexto(){
+ const c=document.getElementById('circulo');
+ if(estado==0){c.innerText="SEGURE...";estado=1}
+ else if(estado==1){c.innerText="SOLTE...";estado=2}
+ else{c.innerText="INSPIRE";estado=0;cont++;document.getElementById('contadorResp').innerText=cont+" hoje"}
+}
+setInterval(mudarTexto,4000);
+function enviarMsg(){
+ const input=document.getElementById('inputMsg');
+ const box=document.getElementById('chatBox');
+ if(!input.value.trim())return;
+ const div=document.createElement('div');div.className='msg';
+ div.innerHTML=input.value+'<span>você - agora</span>';
+ box.appendChild(div);box.scrollTop=box.scrollHeight;
+ localStorage.setItem('chat_'+Date.now(), input.value);input.value='';
+}
 </script>
 </body>
 </html>
