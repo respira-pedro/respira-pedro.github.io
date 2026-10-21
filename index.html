@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Respira Pedro - Encontre Calma em 2 Minutos</title>
+<style>
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0a0a0f;color:white;text-align:center}
+.hero{padding:80px 20px;background:radial-gradient(circle at 50% 0%,#2a2a6a,#0a0a0f)}
+h1{font-size:42px;line-height:1.1;margin:0}
+h1 span{color:#7c7cff}
+p.sub{font-size:18px;color:#aaa;max-width:500px;margin:20px auto}
+.btn{background:white;color:black;padding:18px 36px;border-radius:100px;font-weight:700;font-size:18px;border:none;margin-top:20px}
+.card{background:#15151e;border:1px solid #222;padding:24px;border-radius:20px;margin:20px;max-width:400px;margin-left:auto;margin-right:auto}
+.breathe{width:120px;height:120px;border-radius:50%;background:#7c7cff;margin:30px auto;animation:breathe 4s infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>Quando a ansiedade apertar,<br><span>Respira, Pedro.</span></h1>
+<p class="sub">Uma técnica guiada de 2 minutos para trazer sua mente de volta pro agora. Sem cadastro. Sem app.</p>
+<button class="btn" onclick="document.getElementById('ex').scrollIntoView({behavior:'smooth'})">Começar agora - 2 min</button>
+</div>
+
+<div class="card">
+<h3>Como funciona?</h3>
+<p style="color:#aaa">1. Inspire por 4s<br>2. Segure por 4s<br>3. Expire por 4s<br>Repita com a bola.</p>
+</div>
+
+<div id="ex" style="padding:60px 20px">
+<h2>Vamos respirar juntos</h2>
+<div class="breathe"></div>
+<p id="txt" style="font-size:24px;font-weight:700">Inspire...</p>
+<p style="color:#777">Siga a bola expandindo e contraindo</p>
+</div>
+
+<div style="padding:40px;color:#555">
+<p>Feito com carinho para ajudar nos momentos difíceis.<br><br>
+© respira-pedro.github.io</p>
+</div>
+
+<script>
+const t=document.getElementById('txt');
+let s=0;
+const f=["Inspire...","Segure...","Expire...","Segure..."];
+setInterval(()=>{s=(s+1)%4;t.textContent=f[s]},4000);
+</script>
+</body>
+</html>
