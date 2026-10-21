@@ -52,32 +52,40 @@ nav a{margin:0 10px;color:#0a7cff;text-decoration:none;font-weight:600;cursor:po
 <h2>Bem-vindo, você está em um lugar seguro</h2>
 <p>Aqui a gente lembra de uma coisa simples: <strong>respirar fundo muda tudo.</strong><br>Inspira por 4s, segura por 4s, solta por 4s.</p>
 <div class="respireCircle" id="circulo" onclick="mudarTexto()">INSPIRE</div>
-<p style="color:#666;font-size:14px">Criado por Pedro Lucas Sales de Araújo - Ubajara/CE<br>Pais: Milene de Oliveira Sales e José Gleuciano Rodrigues de Araújo</p>
+<p style="color:#666;font-size:14px">Criado por Pedro Lucas Sales de Araújo</p>
 </div>
 <div class="card" id="diversao">
 <h2>🎮 Pra se divertir e se distrair</h2>
 <div class="grid">
-<div class="jogo" onclick="alert('Jogo da Memória: Tente lembrar de 3 coisas boas do seu dia hoje!')">🧠<br><strong>Jogo da Memória</strong></div>
-<div class="jogo" onclick="alert(['Bebe água e respira fundo','Liga pra alguém que você ama hoje','Faz 10 min de caminhada sem celular'][Math.floor(Math.random()*3)])">💬<br><strong>Conselho do Dia</strong></div>
+<div class="jogo" onclick="alert('Jogo da Memória: Tente lembrar de 3 coisas boas do seu dia hoje!')">🧠<br><strong>Jogo da Memória</strong><br><small>3 coisas boas de hoje</small></div>
+<div class="jogo" onclick="alert('Conselho aleatório')">💬<br><strong>Conselho do Dia</strong></div>
 <div class="jogo" onclick="mudarTexto()">🌬️<br><strong>Respiração</strong><br><small id="contadorResp">0 hoje</small></div>
 <div class="jogo" onclick="alert('Por que o livro de matemática está triste? Porque tem muitos problemas! 😂')">😂<br><strong>Piada Boa</strong></div>
+<div class="jogo" onclick="alert('Desafio do Rabisco: faça um rabisco e transforme em desenho!')">✏️<br><strong>Desenho Livre</strong></div>
+<div class="jogo" onclick="alert('Coloca sua música favorita por 3 minutos e só escuta.')">🎵<br><strong>Música que Acalma</strong></div>
+<div class="jogo" onclick="alert('Escreve 5 coisas pelas quais você é grato hoje.')">🙏<br><strong>Lista de Gratidão</strong></div>
+<div class="jogo" onclick="alert('Técnica 5-4-3-2-1: 5 coisas que vê, 4 que toca, 3 que ouve, 2 que cheira, 1 que sente.')">👀<br><strong>Técnica 5-4-3-2-1</strong></div>
+<div class="jogo" onclick="alert('Alongamento de 2 min: pescoço, ombros, braços e pernas.')">🧘<br><strong>Alongar o Corpo</strong></div>
+<div class="jogo" onclick="alert('Bebe um copo dágua bem devagar.')">💧<br><strong>Pausa da Água</strong></div>
+<div class="jogo" onclick="alert('Escreve uma carta pra você mesmo do futuro.')">💌<br><strong>Carta pro Futuro</strong></div>
+<div class="jogo" onclick="alert('Olhe ao redor e ache 5 objetos azuis agora!')">🎨<br><strong>Caça às Cores</strong></div>
 </div>
 </div>
 <div class="card" id="esportes">
 <h2>⚽ Esportes, Jogos e Hobbies</h2>
 <div class="grid">
-<div class="jogo">🏃‍♂️ <strong>Caminhada</strong><br><small>20 min na praça de Ubajara já limpa a mente</small></div>
-<div class="jogo">⚽ <strong>Futebol com amigos</strong><br><small>Marca um baba no fim de tarde</small></div>
-<div class="jogo">🎮 <strong>Games</strong><br><small>1h pra relaxar e se divertir</small></div>
-<div class="jogo">📚 <strong>Leitura</strong><br><small>10 páginas por dia te deixam mais forte</small></div>
+<div class="jogo">🏃‍♂️ <strong>Caminhada</strong><br><small>20 min já limpa a mente</small></div>
+<div class="jogo">⚽ <strong>Futebol com amigos</strong></div>
+<div class="jogo">🎮 <strong>Games</strong></div>
+<div class="jogo">📚 <strong>Leitura</strong></div>
 </div>
 </div>
 <div class="card" id="bolos">
 <h2>🍰 O criador desse site adora o bolo que a Allana faz</h2>
 <p style="margin-bottom:15px">A Allana faz os melhores bolos! Separei 3 receitas bem legais, fofinhas e fáceis, inspiradas no bolo dela.</p>
-<div class="bolo"><h4>1. Bolo de Chocolate Fofinho da Allana</h4><p>3 ovos, 2 xícaras de farinha, 1 xícara de açúcar, 1 xícara de chocolate em pó, 1 xícara de leite morno, 1/2 xícara de óleo, 1 colher de fermento. Mistura os líquidos, depois os secos e por último o fermento. Forno 180°C por 35 min.</p></div>
-<div class="bolo"><h4>2. Bolo de Cenoura com Calda</h4><p>3 cenouras médias, 3 ovos, 1 xícara de óleo, 2 xícaras de açúcar, 2 e 1/2 de farinha, fermento. Bate cenoura, ovos e óleo no liquidificador.</p></div>
-<div class="bolo"><h4>3. Bolo de Milho Cremoso</h4><p>1 lata de milho, 1 lata de leite, 1 xícara de flocão, 3 ovos, 1/2 xícara de óleo, 1 xícara de açúcar, fermento. Bate tudo e assa 40 min.</p></div>
+<div class="bolo"><h4>1. Bolo de Chocolate Fofinho da Allana</h4><p>3 ovos, 2 xícaras de farinha, 1 xícara de açúcar, 1 xícara de chocolate em pó, 1 xícara de leite morno, 1/2 xícara de óleo, 1 colher de fermento. Forno 180°C por 35 min.</p></div>
+<div class="bolo"><h4>2. Bolo de Cenoura com Calda</h4><p>3 cenouras médias, 3 ovos, 1 xícara de óleo, 2 xícaras de açúcar, 2 e 1/2 de farinha, fermento.</p></div>
+<div class="bolo"><h4>3. Bolo de Milho Cremoso</h4><p>1 lata de milho, 1 lata de leite, 1 xícara de flocão, 3 ovos, 1/2 xícara de óleo, 1 xícara de açúcar, fermento. 40 min.</p></div>
 </div>
 <div class="card" id="chat">
 <h2>💬 Chat do Bem</h2>
